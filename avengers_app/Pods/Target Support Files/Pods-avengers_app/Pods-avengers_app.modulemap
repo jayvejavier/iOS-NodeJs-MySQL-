@@ -1,0 +1,6 @@
+framework module Pods_avengers_app {
+  umbrella header "Pods-avengers_app-umbrella.h"
+
+  export *
+  module * { export * }
+}
