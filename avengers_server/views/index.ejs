@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Avengers Home</title>
+        <style>
+            .hero-container {
+                background-color: white;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                border: solid 1px rgb(199, 199, 199);
+            }
+            .hero-image {
+                width: 42px;
+                height: 42px;
+                float: left;
+                vertical-align: middle;
+                padding: 0px 10px;
+            }
+            h3 {
+                color: navy;
+                display: inline;
+            }
+        </style>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            async function handleDeleteHero(e) {
+                console.log('Deleting hero...');
+                console.log(e.target.id);
+    
+                const heroId = e.target.id;
+                const url = '/hero/' + heroId;
+                try {
+                    const response = await axios.delete(url); 
+                    console.log(response);
+                    location.reload();
+                }
+                catch (err) {
+                    alert(err.toString());
+                    console.error(err.toString());
+                    
+                }
+            } 
+        </script>
+    </head>
+    
+    <body style="background-color: rgb(235, 235, 235);">                               
+        <div>
+            <div>
+                <div><h3>Hero Registration:</h3></div>
+            </div> 
+            <div>
+                <form class="hero-container"  method="post" action="/hero_create" enctype="multipart/form-data">
+                    <div>
+                        <label>Hero Name</label>
+                        <div>
+                            <input type="text" name="create_name" placeholder="Name">
+                        </div>
+                    </div>
+                    <br/>
+                    <div>
+                        <label>Special Skill</label>
+                        <div>
+                            <input type="text" name="create_special_skill" placeholder="SS">
+                        </div>
+                    </div>
+                    <br/>
+                    <div>
+                        <label>Profile Image</label>
+                        <div>
+                            <input type="file" name="uploaded_image" accept=""/>
+                        </div>
+                    </div>   
+                    <br/>                             
+                    <div>
+                        <!-- Button -->                                       
+                        <div>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>  
+                </form>
+            </div>
+            <div>
+                <div><h3>Avengers List: <%= data.length %></h3></div>
+            </div> 
+            <div>
+                <% data.forEach(h => { %>
+                    <div class='hero-container'>
+                        <div>
+                            <!-- <img class="hero-image"src="http://localhost:8080/images/uploaded_images/<%= h.image%>" %> alt="hero image"> -->
+                            <img class="hero-image"src="<%= h.image%>" %> alt="hero image">
+                        </div>
+                        <div><%= h.name %></div>
+                        <div><%= h.special_skill %></div>
+                        <button id='<%= h.id %>' onclick='handleDeleteHero(event)'>Delete</button>
+                    </div>
+                <% }) %> 
+            </div>
+           
+        </div>
+    </body>
+</html>
