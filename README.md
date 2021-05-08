@@ -2,7 +2,7 @@
 
 Avengers app informations:
 
-You can create a new hero via web thru this link
+About hero data entry and maintenance, aside from the iOS app you can also do it on the Web version thru this link
 - https://arcane-river-14727.herokuapp.com/
 
 Heroes API
