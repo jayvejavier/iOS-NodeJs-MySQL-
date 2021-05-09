@@ -3,7 +3,7 @@
 First thing to do: Run npm install
 
 iOS version
-![Simulator Screen Recording - iPhone SE (2nd generation) - 2021-05-09 at 21 11 56](https://user-images.githubusercontent.com/83806412/117573615-82ac0400-b10b-11eb-9c32-c739587863f7.gif)
+- ![Simulator Screen Recording - iPhone SE (2nd generation) - 2021-05-09 at 21 11 56](https://user-images.githubusercontent.com/83806412/117573615-82ac0400-b10b-11eb-9c32-c739587863f7.gif)
 
 Web version:
 https://arcane-river-14727.herokuapp.com/
