@@ -1,6 +1,8 @@
 # iOS-NodeJs-MySQL-
 
-First thing to do: Run npm install
+First thing to do: 
+iOS - Run pod install
+Nodejs - Run npm install
 
 ![Simulator Screen Recording - iPhone SE (2nd generation) - 2021-05-09 at 21 11 56](https://user-images.githubusercontent.com/83806412/117573615-82ac0400-b10b-11eb-9c32-c739587863f7.gif)
 
